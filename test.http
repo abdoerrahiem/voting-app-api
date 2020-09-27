@@ -1,0 +1,167 @@
+### Register user/admin
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTkzOTE4NjR9.74kKXjmXy0qgjDJNsAkfq7UaeQ-q1ArjwPU_taqsufQ
+
+{
+    "name": "Abdur Rahim 2",
+    "username": "abdoerrahiem2",
+    "password": "abdoerrahiem2",
+    "isAdmin": false
+}
+
+### Login user
+POST http://localhost:5000/api/users/loginUser
+Content-Type: application/json
+
+{
+    "username": "janedoe",
+    "password": "janedoe"
+}
+
+### Login admin
+POST http://localhost:5000/api/users/loginAdmin
+Content-Type: application/json
+
+{
+    "username": "abdoerrahiem",
+    "password": "abdoerrahiem"
+}
+
+### Get current user / me
+GET http://localhost:5000/api/users/me
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTkzOTE4NjR9.74kKXjmXy0qgjDJNsAkfq7UaeQ-q1ArjwPU_taqsufQ
+
+### Get all users
+GET http://localhost:5000/api/users
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTk5NTU3OTR9.6hQaxzGQD944QUCQ-DqoErM5bjLJGRS5VUKgYqaOL6I
+
+### Get voted users
+GET http://localhost:5000/api/users?isVoted=true
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTk5NTU3OTR9.6hQaxzGQD944QUCQ-DqoErM5bjLJGRS5VUKgYqaOL6I
+
+### Get unvoted users
+GET http://localhost:5000/api/users?isVoted=false
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTk5NTU3OTR9.6hQaxzGQD944QUCQ-DqoErM5bjLJGRS5VUKgYqaOL6I
+
+### Get user by id
+GET http://localhost:5000/api/users/5f5e1fc5f2940317382417a5
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTkzOTE4NjR9.74kKXjmXy0qgjDJNsAkfq7UaeQ-q1ArjwPU_taqsufQ
+
+### Delete user by id
+DELETE http://localhost:5000/api/users/5f3e0d3668d81c1868350656
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Add photo to user / admin
+PUT http://localhost:5000/api/users/5f3e0d0268d81c1868350655/photo
+Content-Type: application/json
+
+{
+    "url": "https://firebasestorage.googleapis.com/v0/b/votingapp-169e3.appspot.com/o/WhatsApp%20Image%202020-06-14%20at%2010.03.51%20AM.jpeg?alt=media&token=b1605b3e-48e2-4c49-9d44-58ce1ccdd278"
+}
+
+### update user
+PUT http://localhost:5000/api/users/5f5e232289e8f10cb8f5e57b
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMWZjNWYyOTQwMzE3MzgyNDE3YTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDAwNzcyNjl9.FUtHUm-CdwN87lNjHciijMgMzeTM3KWfAXaPV-YdNo8
+
+{
+    "name": "John Doe",
+    "username": "johndoe",
+    "isAdmin": true
+}
+
+### Get user by name
+GET http://localhost:5000/api/users/usersByName
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMWZjNWYyOTQwMzE3MzgyNDE3YTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDAwNzcyNjl9.FUtHUm-CdwN87lNjHciijMgMzeTM3KWfAXaPV-YdNo8
+
+{
+    "name": "john"
+}
+
+### Create candidate
+POST http://localhost:5000/api/candidates
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+{
+    "nameOfChairman": "Abdur Rahim II",
+    "nameOfViceChairman": "John Doe II",
+    "birthdayOfChairman": "12/16/1998",
+    "birthdayOfViceChairman": "11/12/1997",
+    "addressOfChairman": "Mempawah, Indonesia",
+    "addressOfViceChairman": "Sui. Pinyuh, Indonesia",
+    "experienceOfChairman": "Ketua organisasi,Kepala Desa,Mantan bupati",
+    "experienceOfViceChairman": "Ketua organisasi,Kepala Desa,Mantan bupati",
+    "visionAndMission": "Membangun desa menjadi maju,Memberdayakan kemampuan warga masyarakat,Memajukan perekonomian bangsa",
+    "motto": "We can do it because we are unite"
+}
+
+### Get all candidates
+GET http://localhost:5000/api/candidates
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Get candidate by id
+GET http://localhost:5000/api/candidates/5f3e4e358ba7940c748006fb
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Delete candidate
+DELETE http://localhost:5000/api/candidates/5f3e4e7d8ba7940c748006fd
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Update candidate
+PUT http://localhost:5000/api/candidates/5f3e4e638ba7940c748006fc
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+{
+    "nameOfChairman": "Abdur Rahim II",
+    "nameOfViceChairman": "John Doe II",
+    "birthdayOfChairman": "12/16/1998",
+    "birthdayOfViceChairman": "11/12/1997",
+    "addressOfChairman": "Mempawah, Indonesia",
+    "addressOfViceChairman": "Pasir Panjang, Indonesia",
+    "experienceOfChairman": "Ketua organisasi,Kepala Desa,Mantan bupati",
+    "experienceOfViceChairman": "Ketua organisasi,Kepala Desa,Mantan bupati",
+    "visionAndMission": "Membangun desa menjadi maju,Memberdayakan kemampuan warga masyarakat,Memajukan perekonomian bangsa",
+    "motto": "We can do whatever as long as we unite"
+}
+
+### Add photo to candidate
+PUT http://localhost:5000/api/candidates/5f3e0d0268d81c1868350655/photo
+Content-Type: application/json
+
+{
+    "chairmanUrl": "https://firebasestorage.googleapis.com/v0/b/votingapp-169e3.appspot.com/o/WhatsApp%20Image%202020-06-14%20at%2010.03.51%20AM.jpeg?alt=media&token=b1605b3e-48e2-4c49-9d44-58ce1ccdd278",
+    "viceChairmanUrl": "https://firebasestorage.googleapis.com/v0/b/votingapp-169e3.appspot.com/o/WhatsApp%20Image%202020-06-14%20at%2010.03.51%20AM.jpeg?alt=media&token=b1605b3e-48e2-4c49-9d44-58ce1ccdd278"
+}
+
+
+### Add vote 
+POST http://localhost:5000/api/votes/5f64ba110359f706d0cbb286
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMjMyZTg5ZThmMTBjYjhmNWU1N2MiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjAwNTAyNDk5fQ.cGmHVrOjpV81KLuODbvqLwzeZQ0aXUgKSvtfODntMXw
+
+### Get all votes
+GET http://localhost:5000/api/votes
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMWZjNWYyOTQwMzE3MzgyNDE3YTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDA0OTQwNTV9.WnYNhihJpSN-xNtlp5jrXXDrAwmjtaNybfD8J7HeXhk
+
+### Get votes by candidate
+GET http://localhost:5000/api/votes?candidateId=5f3e4e638ba7940c748006fc
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Get vote by id
+GET http://localhost:5000/api/votes/5f3e665c7878fe1778f7a3a9
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Delete vote
+DELETE http://localhost:5000/api/votes/5f410b52ff3e690c946d34b1
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+
+### Delete all votes
+DELETE http://localhost:5000/api/votes
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+

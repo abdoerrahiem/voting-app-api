@@ -1,0 +1,27 @@
+1. Register user/admin (auth & admin)
+2. Login user 
+3. Login admin
+4. Get current user / me (auth)
+5. Get all users (auth & admin)
+6. Get voted users (auth & admin)
+7. Get unvoted users (auth & admin)
+8. Get user by id (auth & admin)
+9. Delete user (auth & admin)
+10. Add photo to user/admin (auth & admin)
+
+11. Create candidate (auth & admin)
+12. Get all candidates (auth)
+13. Get candidate by id (auth)
+14. Delete candidate (auth & admin)
+15. Update candidate (auth & admin)
+16. Add photo to candidates (auth & admin)
+
+17. Add vote (auth)
+18. Get all votes (auth)
+19. Get votes by candidate (auth)
+20. Get vote by id (auth & admin)
+21. Delete vote (auth & admin)
+22. Delete all votes (auth & admin)
+
+23. Add photo to candidates
+
