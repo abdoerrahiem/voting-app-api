@@ -15,8 +15,8 @@ POST http://localhost:5000/api/users/loginUser
 Content-Type: application/json
 
 {
-    "username": "janedoe",
-    "password": "janedoe"
+    "username": "johndoe",
+    "password": "johndoe"
 }
 
 ### Login admin
@@ -83,11 +83,11 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMWZjNWYyOTQwM
 ### Create candidate
 POST http://localhost:5000/api/candidates
 Content-Type: application/json
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMWZjNWYyOTQwMzE3MzgyNDE3YTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDE1NjQzNjV9.JewnnZkQ1i1VKDiwlSxVGFifwhoWQ_YtegmlAoDyf-0
 
 {
-    "nameOfChairman": "Abdur Rahim II",
-    "nameOfViceChairman": "John Doe II",
+    "nameOfChairman": "Lucifer Morningstar",
+    "nameOfViceChairman": "Chloe Decker",
     "birthdayOfChairman": "12/16/1998",
     "birthdayOfViceChairman": "11/12/1997",
     "addressOfChairman": "Mempawah, Indonesia",
@@ -142,8 +142,8 @@ Content-Type: application/json
 
 
 ### Add vote 
-POST http://localhost:5000/api/votes/5f64ba110359f706d0cbb286
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMjMyZTg5ZThmMTBjYjhmNWU1N2MiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjAwNTAyNDk5fQ.cGmHVrOjpV81KLuODbvqLwzeZQ0aXUgKSvtfODntMXw
+POST http://localhost:5000/api/votes/5f75ef53aaa41518585863ff
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjVlMjMyMjg5ZThmMTBjYjhmNWU1N2IiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjAxNTY1NDM1fQ.osTTeC6HtsZVULWDkgtO7kRGrOOMBk3CEkefal5ZAls
 
 ### Get all votes
 GET http://localhost:5000/api/votes

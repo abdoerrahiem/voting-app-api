@@ -49,6 +49,10 @@ const candidate = new mongoose.Schema({
     default:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
   },
+  totalSuara: {
+    type: Number,
+    default: 0,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

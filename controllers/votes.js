@@ -28,6 +28,10 @@ exports.addVote = async (req, res) => {
       })
 
     const vote = await Vote.create(newVote)
+
+    candidate.totalSuara += 1
+    await candidate.save()
+
     res.json({
       success: true,
       message: 'Vote berhasil. Terima kasih atas partisipasi kamu.',
