@@ -182,6 +182,6 @@ exports.createPdf = async (req, res) => {
     })
     .toFile('./files/result.pdf', (err, response) => {
       if (err) return console.log(err)
-      res.send(response.filename.split('api')[1])
+      res.json({ urlDownload: response.filename.split('api')[1] })
     })
 }
