@@ -163,5 +163,9 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxY
 
 ### Delete all votes
 DELETE http://localhost:5000/api/votes
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNlMGQwMjY4ZDgxYzE4NjgzNTA2NTUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTc5MDI3NTN9.SmcpTl2AEUt3rtSTV9riMhBa_fyC-GoVEhdSN_hk5XM
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjgxMjA1NDVlNzdiMjAwMTcwYTQ5YjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDQxMDI4MTl9.jH3fA_sCUvqMMGA4Ar_D6PMY6-7voB27cQhL2sNzQ4U
+
+### Create pdf
+POST http://localhost:5000/api/votes/createpdf
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjgxMjA1NDVlNzdiMjAwMTcwYTQ5YjciLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2MDQxMDI4MTl9.jH3fA_sCUvqMMGA4Ar_D6PMY6-7voB27cQhL2sNzQ4U
 

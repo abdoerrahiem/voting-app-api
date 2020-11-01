@@ -21,6 +21,7 @@
     "express-validator": "^6.6.1",
     "firebase": "^7.18.0",
     "formidable": "^1.2.2",
+    "html-pdf": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.20",
     "xhr2": "^0.2.0"

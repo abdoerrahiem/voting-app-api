@@ -1,3 +1,6 @@
+const fs = require('fs')
+const pdf = require('html-pdf')
+const document = require('../files/document')
 const Vote = require('../models/Vote')
 const User = require('../models/User')
 const Candidate = require('../models/Candidate')
@@ -166,4 +169,19 @@ exports.deleteVotes = async (req, res) => {
       message: err.message || 'Server error.',
     })
   }
+}
+
+// Create pdf
+exports.createPdf = async (req, res) => {
+  const candidates = await Candidate.find({})
+
+  pdf
+    .create(document(candidates), {
+      format: 'A4',
+      border: '2cm',
+    })
+    .toFile('./files/result.pdf', (err, response) => {
+      if (err) return console.log(err)
+      res.send(response.filename.split('api')[1])
+    })
 }
