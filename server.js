@@ -12,13 +12,13 @@ database()
 app.use(express.json())
 app.use(cors())
 
-app.use(express.static(path.join(__dirname, 'files')))
-
 app.get('/', (req, res) => res.send('API running...'))
 
 app.use('/api/users', require('./routes/users'))
 app.use('/api/candidates', require('./routes/candidates'))
 app.use('/api/votes', require('./routes/votes'))
+
+app.use('/files', express.static(path.join(path.resolve(), '/files')))
 
 const PORT = process.env.PORT || 5000
 const server = app.listen(PORT, () =>
