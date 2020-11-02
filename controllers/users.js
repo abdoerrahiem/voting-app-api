@@ -301,3 +301,29 @@ exports.getUsersByName = async (req, res) => {
     })
   }
 }
+
+// Update my profile
+exports.updateUserProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id)
+
+    if (user) {
+      user.name = req.body.name
+      user.username = req.body.username
+      if (req.body.password) {
+        user.password = req.body.password
+      }
+
+      await user.save()
+
+      res.json({
+        message: 'User berhasil diperbaharui.',
+        user: {
+          _id: user._id,
+          name: user.name,
+          username: user.username,
+        },
+      })
+    }
+  } catch (error) {}
+}
