@@ -11,12 +11,14 @@ const {
   updateUser,
   getUsersByName,
   updateUserProfile,
+  editPhoto,
 } = require('../controllers/users')
 const auth = require('../middleware/auth')
 const admin = require('../middleware/admin')
 
 router.get('/me', auth, me)
 router.put('/me', auth, updateUserProfile)
+router.put('/me/photo', auth, editPhoto)
 router.get('/usersByName', auth, admin, getUsersByName)
 router.get('/', auth, admin, getUsers)
 router.get('/:id', auth, admin, getUser)

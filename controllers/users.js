@@ -344,3 +344,39 @@ exports.updateUserProfile = async (req, res) => {
     })
   }
 }
+
+// Upload photo for my profile
+exports.editPhoto = async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        photo: req.body.url,
+      },
+      { new: true }
+    ).select('-password')
+
+    if (!user)
+      return res.status(404).json({
+        success: false,
+        message: 'User tidak ditemukan',
+      })
+
+    res.json({
+      success: true,
+      message: 'Photo berhasil diperbaharui.',
+      data: user,
+    })
+  } catch (err) {
+    if (err.kind === 'ObjectId')
+      return res.status(404).json({
+        success: false,
+        message: 'User tidak ditemukan',
+      })
+
+    res.status(500).json({
+      success: false,
+      message: err.message || 'Server error.',
+    })
+  }
+}
