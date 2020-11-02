@@ -30,7 +30,13 @@ Content-Type: application/json
 
 ### Get current user / me
 GET http://localhost:5000/api/users/me
-x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjU0Yzg3ODcyYTk0ZTBhYjhkYjgyMGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTkzOTE4NjR9.74kKXjmXy0qgjDJNsAkfq7UaeQ-q1ArjwPU_taqsufQ
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjlhN2I2ODQ3MjRlOTAwMTc4YzQwNzkiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjA0Mjg3MTQyfQ.FHOQUEckHfsFIRuBScNaPca8HRy-4puybbqgb64o3xo
+
+{
+    "username": "abdoerrahiem"
+}
+
 
 ### Update user profile
 PUT http://localhost:5000/api/users/me

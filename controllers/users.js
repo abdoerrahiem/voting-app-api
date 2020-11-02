@@ -127,7 +127,9 @@ exports.loginAdmin = async (req, res) => {
 
 // Get current user / me
 exports.me = async (req, res) => {
-  const user = await User.findById(req.user._id).select('-password')
+  const user = req.body.username
+    ? await User.findOne({ username: req.body.username }).select('-password')
+    : await User.findById(req.user._id).select('-password')
 
   res.json({
     success: true,
@@ -322,8 +324,23 @@ exports.updateUserProfile = async (req, res) => {
           _id: user._id,
           name: user.name,
           username: user.username,
+          photo: user.photo,
+          isAdmin: user.isAdmin,
+          isVoted: user.isVoted,
+          token: user.generateAuthToken(),
         },
       })
     }
-  } catch (error) {}
+  } catch (error) {
+    if (error.kind === 'ObjectId')
+      return res.status(404).json({
+        success: false,
+        message: 'User tidak ditemukan.',
+      })
+
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Server error.',
+    })
+  }
 }
